@@ -45,7 +45,7 @@ class StudentListFragment : BaseFragment() {
         studentList.add(Student("이승원", 1978, true))
         studentList.add(Student("이현호", 1981, true))
 
-        mStudentAdapter = StudentAdapter(activity as Context, R.layout.student_list_item, studentList)
+        mStudentAdapter = StudentAdapter(mContext, R.layout.student_list_item, studentList)
         studentListView.adapter = mStudentAdapter
     }
 
