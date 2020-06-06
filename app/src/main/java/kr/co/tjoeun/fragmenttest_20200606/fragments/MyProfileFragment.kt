@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_my_profile.*
 import kr.co.tjoeun.fragmenttest_20200606.R
 
-class MyProfileFragment : Fragment() {
+class MyProfileFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +23,11 @@ class MyProfileFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        setupEvents()
+        setValues()
+    }
 
+    override fun setupEvents() {
         dialBtn.setOnClickListener {
             val inputPhoneNum = phoneNumEdt.text.toString()
 
@@ -32,5 +36,10 @@ class MyProfileFragment : Fragment() {
             startActivity(myIntent)
         }
     }
+
+    override fun setValues() {
+
+    }
+
 
 }
