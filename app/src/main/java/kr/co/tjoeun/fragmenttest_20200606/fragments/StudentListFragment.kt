@@ -12,7 +12,7 @@ import kr.co.tjoeun.fragmenttest_20200606.R
 import kr.co.tjoeun.fragmenttest_20200606.adapters.StudentAdapter
 import kr.co.tjoeun.fragmenttest_20200606.datas.Student
 
-class StudentListFragment : Fragment() {
+class StudentListFragment : BaseFragment() {
 
     val studentList = ArrayList<Student>()
     lateinit var mStudentAdapter : StudentAdapter
@@ -27,7 +27,15 @@ class StudentListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        setupEvents()
+        setValues()
+    }
 
+    override fun setupEvents() {
+
+    }
+
+    override fun setValues() {
         studentList.add(Student("조경진", 1988, true))
         studentList.add(Student("김광철", 1966, true))
         studentList.add(Student("김재환", 1993, true))
@@ -39,8 +47,8 @@ class StudentListFragment : Fragment() {
 
         mStudentAdapter = StudentAdapter(activity as Context, R.layout.student_list_item, studentList)
         studentListView.adapter = mStudentAdapter
-
-
     }
+
+
 
 }
